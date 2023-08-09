@@ -2,12 +2,15 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-var ctrlLocations=require('C:/loc8r/app-server/controller/locations.js') ;
-var ctrlOthers=require('C:/loc8r/app-server/controller/others.js') ;
+var ctrlLocations=require('../controller/locations') ;
+var ctrlothers=require('../controller/others') ;
+
 router.get('/',ctrlLocations.homelist);
 router.get('/location',ctrlLocations.LocationInfo);
 router.get('/location/review/new',ctrlLocations.addReview);
 
-router.get('/about',ctrlOthers.about);
+router.get('/about',ctrlothers.about);
+router.get('/signin',ctrlothers.signin);
+ 
 
 module.exports = router;
